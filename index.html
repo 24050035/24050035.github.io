@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Portfolio — Lê Chí Thành</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- Thông tin cá nhân -->
+  <section id="personal">
+    <h2>👤 Thông tin cá nhân</h2>
+    <div class="section-content">
+      <div class="avatar"><img src="2009ca49649de9c3b08c.jpg" alt="Avatar"></div>
+      <p><strong>Họ tên:</strong> Lê Chí Thành</p>
+      <p><strong>Sinh:</strong> 08/12/2006</p>
+      <p><strong>Học vấn:</strong> Sinh viên năm 2 ĐH Bình Dương</p>
+      <p><strong>Email:</strong> 24050035@student.bdu.edu.vn</p>
+      <div class="nav-icons">
+        <a href="#skills">🛠️ Kỹ năng</a>
+        <a href="#projects">📂 Dự án</a>
+        <a href="#hobbies">🎮 Sở thích</a>
+        <a href="#languages">🌐 Ngôn ngữ</a>
+        <a href="#contact">✉️ Liên hệ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kỹ năng -->
+  <section id="skills">
+    <h2>🛠️ Kỹ năng</h2>
+    <div class="section-content">
+      <div class="skill-container">
+        <div class="skill">
+          <div class="app-icon">
+            <img src="ps.png" alt="Photoshop">
+            <div class="water" style="--level:70%;height:0%">70%</div>
+          </div>
+          <div class="icon-label">Photoshop</div>
+        </div>
+        <div class="skill">
+          <div class="app-icon">
+            <img src="vs.png" alt="Visual Studio">
+            <div class="water" style="--level:50%;height:0%">50%</div>
+          </div>
+          <div class="icon-label">Visual Studio</div>
+        </div>
+        <div class="skill">
+          <div class="app-icon">
+            <img src="ai.png" alt="Illustrator">
+            <div class="water" style="--level:60%;height:0%">60%</div>
+          </div>
+          <div class="icon-label">Illustrator</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dự án -->
+  <section id="projects">
+    <h2>📂 Dự án</h2>
+    <div class="section-content">
+      <div class="skill-container">
+        <div class="project">
+          <div class="app-icon">
+            <img src="duan1.png" alt="Trang Web Bán Thuốc">
+            <div class="label-overlay">Code Trang Web Bán Thuốc</div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="app-icon">
+            <img src="duan2.png" alt="Tựa game đơn giản">
+            <div class="label-overlay">Code ra 1 Tựa game đơn giản</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sở thích -->
+  <section id="hobbies">
+    <h2>🎮 Sở thích</h2>
+    <div class="section-content">
+      <div class="skill-container">
+        <div class="hobby">
+          <div class="app-icon">
+            <img src="choigame.png" alt="Chơi game">
+            <div class="label-overlay">Chơi game</div>
+          </div>
+        </div>
+        <div class="hobby">
+          <div class="app-icon">
+            <img src="ngu.png" alt="Ngủ">
+            <div class="label-overlay">Ngủ</div>
+          </div>
+        </div>
+        <div class="hobby">
+          <div class="app-icon">
+            <img src="xemphim.png" alt="Xem phim">
+            <div class="label-overlay">Xem phim</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ngôn ngữ -->
+  <section id="languages">
+    <h2>🌐 Ngôn ngữ</h2>
+    <div class="section-content">
+      <div class="skill-container">
+        <div class="skill">
+          <div class="app-icon">
+            <img src="english.png" alt="English">
+            <div class="water" style="--level:90%;height:0%">90%</div>
+          </div>
+          <div class="icon-label">Tiếng Anh</div>
+        </div>
+        <div class="skill">
+          <div class="app-icon">
+            <img src="japanese.png" alt="Japanese">
+            <div class="water" style="--level:20%;height:0%">20%</div>
+          </div>
+          <div class="icon-label">Tiếng Nhật</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Liên hệ -->
+  <section id="contact" class="contact">
+    <h2>✉️ Liên hệ</h2>
+    <div class="section-content">
+      <form onsubmit="return submitContact(event)">
+        <input id="name" type="text" placeholder="Họ tên" required>
+        <input id="email" type="email" placeholder="Email" required>
+        <textarea id="message" rows="4" placeholder="Lời nhắn" required></textarea>
+        <button class="btn" type="submit">Gửi</button>
+      </form>
+      <div id="sent" style="display:none;margin-top:10px;color:var(--muted)">Cảm ơn! Tin nhắn của bạn đã được gửi (mô phỏng).</div>
+    </div>
+  </section>
+
+  <footer style="text-align:center;margin-top:6px;color:var(--muted)">© <span id="year"></span> Lê Chí Thành — Portfolio</footer>
+</div>
+
+<script>
+// set year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// contact mock
+function submitContact(e){
+  e.preventDefault();
+  document.querySelector('.contact form').style.display='none';
+  document.getElementById('sent').style.display='block';
+  return false;
+}
+
+// reveal animation
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+},{threshold:0.12});
+sections.forEach(s=>observer.observe(s));
+
+// snow
+for(let i=0;i<10;i++){
+  const flake = document.createElement('div');
+  flake.className='snowflake';
+  flake.style.left = Math.random()*100 + 'vw';
+  flake.style.width = flake.style.height = (3 + Math.random()*6) + 'px';
+  flake.style.opacity = (0.5 + Math.random()*0.6).toString();
+  flake.style.animationDuration = (6 + Math.random()*6) + 's';
+  flake.style.transform = 'translateX(0)';
+  document.body.appendChild(flake);
+}
+
+// WATER FILL animation
+document.querySelectorAll('.app-icon').forEach(icon=>{
+  const water = icon.querySelector('.water');
+  if(!water) return;
+  icon.addEventListener('mouseenter', ()=>{
+    let lvl = window.getComputedStyle(water).getPropertyValue('--level') || water.style.getPropertyValue('--level');
+    if(!lvl) { lvl = water.textContent.trim(); }
+    let n = parseFloat(lvl.toString().replace('%','').trim());
+    if(isNaN(n)) n = 0;
+    water.style.height = n + '%';
+    water.style.opacity = '1';
+  });
+  icon.addEventListener('mouseleave', ()=>{
+    water.style.height = '0%';
+    water.style.opacity = '0';
+  });
+});
+</script>
+</body>
+</html>
